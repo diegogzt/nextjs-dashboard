@@ -1,5 +1,8 @@
 import { Revenue } from './definitions';
-
+import { type ClassValue, clsx } from "clsx";
+export function cn(...inputs: ClassValue[]) {
+  return clsx(inputs);
+}
 export const formatCurrency = (amount: number) => {
   return (amount / 100).toLocaleString('en-US', {
     style: 'currency',

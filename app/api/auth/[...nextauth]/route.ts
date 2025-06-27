@@ -64,21 +64,23 @@ const { handlers } = NextAuth({
         return null;
       },
     }),
-    // Google
-    GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID!,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
-    }),
-    // GitHub
-    GitHubProvider({
-      clientId: process.env.GITHUB_CLIENT_ID!,
-      clientSecret: process.env.GITHUB_CLIENT_SECRET!,
-    }),
-    // LinkedIn
-    LinkedInProvider({
-      clientId: process.env.LINKEDIN_CLIENT_ID!,
-      clientSecret: process.env.LINKEDIN_CLIENT_SECRET!,
-    }),
+    // Google - Comentado hasta que se configuren las credenciales
+    // GoogleProvider({
+    //   clientId: process.env.GOOGLE_CLIENT_ID!,
+    //   clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+    // }),
+    // GitHub - Solo habilitado si las credenciales están disponibles
+    ...(process.env.GITHUB_CLIENT_ID && process.env.GITHUB_CLIENT_SECRET ? [
+      GitHubProvider({
+        clientId: process.env.GITHUB_CLIENT_ID!,
+        clientSecret: process.env.GITHUB_CLIENT_SECRET!,
+      })
+    ] : []),
+    // LinkedIn - Comentado hasta que se configuren las credenciales
+    // LinkedInProvider({
+    //   clientId: process.env.LINKEDIN_CLIENT_ID!,
+    //   clientSecret: process.env.LINKEDIN_CLIENT_SECRET!,
+    // }),
   ],
 });
 

@@ -25,8 +25,8 @@ async function getUser(email: string): Promise<User | undefined> {
   }
 }
 
-// Configuración principal de NextAuth para la API route
-const handler = NextAuth({
+// Configuración de NextAuth
+const { handlers } = NextAuth({
   // Importa configuración adicional desde auth.config
   ...authConfig,
 
@@ -82,4 +82,4 @@ const handler = NextAuth({
   ],
 });
 
-export { handler as GET, handler as POST };
+export const { GET, POST } = handlers;

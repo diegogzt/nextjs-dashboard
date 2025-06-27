@@ -31,18 +31,18 @@ export default function Nav() {
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
-            <a
+            <Link
               href="/#features"
               className="text-gray-400 hover:text-white transition-all duration-300 hover:scale-105"
             >
               Características
-            </a>
-            <a
+            </Link>
+            <Link
               href="/#pricing"
               className="text-gray-400 hover:text-white transition-all duration-300 hover:scale-105"
             >
               Precios
-            </a>
+            </Link>
             <Link
               href="/contact"
               className="text-gray-400 hover:text-white transition-all duration-300 hover:scale-105"

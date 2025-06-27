@@ -32,19 +32,19 @@ export default function Nav() {
 
           <div className="hidden md:flex items-center space-x-8">
             <a
-              href="#features"
+              href="/#features"
               className="text-gray-400 hover:text-white transition-all duration-300 hover:scale-105"
             >
               Características
             </a>
             <a
-              href="#pricing"
+              href="/#pricing"
               className="text-gray-400 hover:text-white transition-all duration-300 hover:scale-105"
             >
               Precios
             </a>
             <Link
-              href="#contact"
+              href="/contact"
               className="text-gray-400 hover:text-white transition-all duration-300 hover:scale-105"
             >
               Contacto

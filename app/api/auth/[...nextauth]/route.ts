@@ -3,7 +3,7 @@ import Credentials from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
 import GitHubProvider from "next-auth/providers/github";
 import LinkedInProvider from "next-auth/providers/linkedin";
-import { authConfig } from "./auth.config";
+import { authConfig } from "@/auth.config";
 import { z } from "zod";
 import type { User } from "@/app/lib/definitions";
 import bcrypt from "bcrypt";
@@ -25,8 +25,8 @@ async function getUser(email: string): Promise<User | undefined> {
   }
 }
 
-// Configuración principal de NextAuth
-export const { auth, signIn, signOut } = NextAuth({
+// Configuración principal de NextAuth para la API route
+const handler = NextAuth({
   // Importa configuración adicional desde auth.config
   ...authConfig,
 
@@ -81,3 +81,5 @@ export const { auth, signIn, signOut } = NextAuth({
     }),
   ],
 });
+
+export { handler as GET, handler as POST };

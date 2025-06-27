@@ -11,6 +11,7 @@ import { Button } from "@/app/ui/button";
 import { useActionState } from "react";
 import { authenticate } from "@/app/lib/actions";
 import { useSearchParams } from "next/navigation";
+import { signIn } from "next-auth/react";
 
 export default function LoginForm() {
   const searchParams = useSearchParams();
@@ -19,6 +20,10 @@ export default function LoginForm() {
     authenticate,
     undefined
   );
+
+  const handleGitHubSignIn = () => {
+    signIn("github", { callbackUrl });
+  };
 
   return (
     <form
@@ -97,7 +102,7 @@ export default function LoginForm() {
           {/* GitHub - Solo si las credenciales están configuradas */}
           <button
             type="button"
-            onClick={() => (window.location.href = "/api/auth/signin/github")}
+            onClick={handleGitHubSignIn}
             className="flex items-center justify-center gap-2 w-full bg-gray-900 text-white font-semibold py-3 rounded-md hover:bg-gray-800 transition-all duration-200 border border-gray-700"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">

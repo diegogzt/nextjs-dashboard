@@ -1,6 +1,7 @@
 import "./ui/global.css";
 import { montserrar } from "./ui/fonts";
 import { Metadata } from "next";
+import { Providers } from "./providers";
 
 export const metadata: Metadata = {
   title: {
@@ -18,7 +19,8 @@ export default function Layout({
 }) {
   return (
     <html lang="en">
-      <body className={`${montserrar.className} antialiased`}>{children}
+      <body className={`${montserrar.className} antialiased`}>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

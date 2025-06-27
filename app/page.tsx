@@ -81,7 +81,7 @@ export default function LandingPage() {
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <Button className="bg-gray-900 text-black hover:bg-gray-200 hover:text-black px-8 py-3 text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg">
+              <Button className="bg-gray-900 text-gray-300/90 hover:bg-gray-200 hover:text-black px-8 py-3 text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg">
                 Comenzar Gratis
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
@@ -352,7 +352,7 @@ export default function LandingPage() {
             decisiones con DashPilot
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-gray-900 text-black hover:bg-gray-200 hover:text-black px-8 py-3 text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg">
+            <Button className="bg-gray-900  text-gray-300/90 hover:bg-gray-200 hover:text-black px-8 py-3 text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg">
               Comenzar Prueba Gratuita
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>

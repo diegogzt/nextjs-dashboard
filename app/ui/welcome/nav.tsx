@@ -50,8 +50,8 @@ export default function Nav() {
               Contacto
             </Link>
             <Link
-              href={"/login"}
-              className="bg-transparent border-gray-700 text-white hover:bg-white hover:text-black transition-all duration-300 hover:scale-105"
+              href="/login"
+              className="px-5 py-2 rounded-md border border-gray-700 text-white bg-transparent hover:bg-white hover:text-black transition-all duration-200 font-medium shadow-sm"
             >
               Iniciar Sesión
             </Link>

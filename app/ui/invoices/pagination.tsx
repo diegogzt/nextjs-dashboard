@@ -12,7 +12,7 @@ export default function Pagination({ totalPages }: { totalPages: number }) {
   const currentPage = Number(searchParams.get("page")) || 1;
   const createPageURL = (pageNumber: number | string) => {
     const params = new URLSearchParams(searchParams);
-    
+
     params.set("page", pageNumber.toString());
     return `${pathname}?${params.toString()}`;
   };
@@ -79,7 +79,8 @@ function PaginationNumber({
       "rounded-l-md": position === "first" || position === "single",
       "rounded-r-md": position === "last" || position === "single",
       "z-10 bg-lime-400 border-lime-400 text-black": isActive,
-      "bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-lime-400": !isActive && position !== "middle",
+      "bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-lime-400":
+        !isActive && position !== "middle",
       "text-gray-500 bg-gray-900": position === "middle",
     }
   );
@@ -106,7 +107,8 @@ function PaginationArrow({
     "flex h-10 w-10 items-center justify-center rounded-md border border-gray-700",
     {
       "pointer-events-none text-gray-500 bg-gray-900": isDisabled,
-      "bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-lime-400": !isDisabled,
+      "bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-lime-400":
+        !isDisabled,
       "mr-2 md:mr-4": direction === "left",
       "ml-2 md:ml-4": direction === "right",
     }

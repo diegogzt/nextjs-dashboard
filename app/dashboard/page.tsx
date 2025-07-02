@@ -3,7 +3,11 @@ import { lusitana } from "../ui/fonts";
 import RevenueChart from "../ui/dashboard/revenue-chart";
 import LatestInvoices from "../ui/dashboard/latest-invoices";
 import { Suspense } from "react";
-import { CardSkeleton, LatestInvoicesSkeleton, RevenueChartSkeleton } from "../ui/skeletons";
+import {
+  CardSkeleton,
+  LatestInvoicesSkeleton,
+  RevenueChartSkeleton,
+} from "../ui/skeletons";
 import CardWrapper from "../ui/dashboard/cards";
 import { Metadata } from "next";
 
@@ -13,7 +17,9 @@ export const metadata: Metadata = {
 export default async function DashboardPage() {
   return (
     <main>
-      <h1 className={`${lusitana.className} mb-4 text-xl md:text-2xl text-white`}>
+      <h1
+        className={`${lusitana.className} mb-4 text-xl md:text-2xl text-white`}
+      >
         Dashboard
       </h1>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

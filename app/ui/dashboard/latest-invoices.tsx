@@ -1,15 +1,17 @@
-import { ArrowPathIcon } from '@heroicons/react/24/outline';
-import clsx from 'clsx';
-import Image from 'next/image';
-import { lusitana } from '@/app/ui/fonts';
-import { LatestInvoice } from '@/app/lib/definitions';
-import { fetchLatestInvoices } from '@/app/lib/data';
+import { ArrowPathIcon } from "@heroicons/react/24/outline";
+import clsx from "clsx";
+import Image from "next/image";
+import { lusitana } from "@/app/ui/fonts";
+import { LatestInvoice } from "@/app/lib/definitions";
+import { fetchLatestInvoices } from "@/app/lib/data";
 
 export default async function LatestInvoices() {
   const latestInvoice = await fetchLatestInvoices();
   return (
     <div className="flex w-full flex-col md:col-span-4">
-      <h2 className={`${lusitana.className} mb-4 text-xl md:text-2xl text-white`}>
+      <h2
+        className={`${lusitana.className} mb-4 text-xl md:text-2xl text-white`}
+      >
         Latest Invoices
       </h2>
       <div className="flex grow flex-col justify-between rounded-xl bg-gray-900 border border-gray-800 p-4">
@@ -19,10 +21,10 @@ export default async function LatestInvoices() {
               <div
                 key={invoice.id}
                 className={clsx(
-                  'flex flex-row items-center justify-between py-4',
+                  "flex flex-row items-center justify-between py-4",
                   {
-                    'border-t border-gray-700': i !== 0,
-                  },
+                    "border-t border-gray-700": i !== 0,
+                  }
                 )}
               >
                 <div className="flex items-center">

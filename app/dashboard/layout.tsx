@@ -1,4 +1,5 @@
 import SideNav from "@/app/ui/dashboard/sidenav";
+import DashboardHeader from "@/app/ui/dashboard/header";
 
 export const experimental_ppr = true;
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -9,10 +10,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <SideNav />
         <main className="flex-1 p-6 bg-black overflow-y-auto">{children}</main>
       </div>
-      
+
       {/* Mobile layout */}
       <div className="md:hidden">
-        <main className="p-4 pb-20 bg-black min-h-screen">{children}</main>
+        <DashboardHeader />
+        <main className="pt-16 p-4 pb-20 bg-black min-h-screen">
+          {children}
+        </main>
         <SideNav />
       </div>
     </div>

@@ -47,7 +47,7 @@ export default function LandingPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="container mx-auto px-6 h-dvh flex items-center justify-center">
+      <section className="container mx-auto px-6 pt-96 lg:pt-0 h-dvh flex items-center justify-center">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <div className="space-y-4">
@@ -153,7 +153,10 @@ export default function LandingPage() {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="container mx-auto px-6 py-20">
+      <section
+        id="features"
+        className="container mx-auto px-6  pt-96 lg:pt-0 py-20"
+      >
         <div className="text-center space-y-4 mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}

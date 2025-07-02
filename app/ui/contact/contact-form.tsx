@@ -57,7 +57,7 @@ export function ContactForm({ onSubmit }: ContactFormProps) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-6 w-full max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto bg-gray-900/60 p-4 sm:p-8 rounded-2xl shadow-2xl border border-gray-800"
+      className="space-y-6 w-full max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto bg-gray-900/60 p-4 sm:p-8 rounded-2xl shadow-2xl border border-gray-800 mt-16"
     >
       <h2 className="text-3xl font-bold text-white mb-4 text-center">
         Contáctanos

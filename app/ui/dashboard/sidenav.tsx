@@ -2,7 +2,7 @@ import Link from "next/link";
 import NavLinks from "@/app/ui/dashboard/nav-links";
 import AcmeLogo from "@/app/ui/acme-logo";
 import { PowerIcon } from "@heroicons/react/24/outline";
-import { signOut } from "@/auth";
+import { handleSignOut } from "@/app/lib/auth-actions";
 
 export default function SideNav() {
   return (
@@ -20,12 +20,7 @@ export default function SideNav() {
         <div className="flex grow flex-col space-y-2">
           <NavLinks />
           <div className="h-auto w-full grow rounded-md bg-gray-800"></div>
-          <form
-            action={async () => {
-              "use server";
-              await signOut({ redirectTo: "/" });
-            }}
-          >
+          <form action={handleSignOut}>
             <button className="flex h-[48px] w-full items-center justify-start gap-2 rounded-md bg-gray-800 p-3 text-sm font-medium text-gray-300 hover:bg-lime-400 hover:text-black transition-all duration-300">
               <PowerIcon className="w-6" />
               <div>Sign Out</div>
@@ -38,12 +33,7 @@ export default function SideNav() {
       <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-gray-900 border-t border-gray-800">
         <div className="flex justify-around items-center py-2">
           <NavLinks />
-          <form
-            action={async () => {
-              "use server";
-              await signOut({ redirectTo: "/" });
-            }}
-          >
+          <form action={handleSignOut}>
             <button className="flex flex-col items-center justify-center p-2 text-xs font-medium text-gray-300 hover:text-lime-400 transition-all duration-300">
               <PowerIcon className="w-6 h-6 mb-1" />
               <span>Salir</span>

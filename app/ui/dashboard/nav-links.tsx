@@ -19,7 +19,11 @@ const links = [
   { name: "Customers", href: "/dashboard/customers", icon: UserGroupIcon },
 ];
 
-export default function NavLinks() {
+interface NavLinksProps {
+  onLinkClick?: () => void;
+}
+
+export default function NavLinks({ onLinkClick }: NavLinksProps) {
   const pathname = usePathname();
   return (
     <>
@@ -30,6 +34,7 @@ export default function NavLinks() {
           <Link
             key={link.name}
             href={link.href}
+            onClick={onLinkClick}
             className={`flex flex-col md:flex-row items-center justify-center md:justify-start gap-1 md:gap-2 rounded-md p-2 md:p-3 text-xs md:text-sm font-medium transition-all duration-300 md:h-[48px] md:grow md:flex-none ${
               isActive
                 ? "bg-lime-400 text-black"

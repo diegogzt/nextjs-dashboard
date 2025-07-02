@@ -18,7 +18,7 @@ export default async function DashboardPage() {
   return (
     <main>
       <h1
-        className={`${lusitana.className} mb-4 text-xl md:text-2xl text-white`}
+        className={`${lusitana.className} mb-4 pt-4 md:pt-0 text-xl md:text-2xl text-white`}
       >
         Dashboard
       </h1>

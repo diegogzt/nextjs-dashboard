@@ -24,21 +24,32 @@ import Link from "next/link";
 export default function LandingPage() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [cardHeight, setCardHeight] = useState<number>(0);
+  const [mounted, setMounted] = useState(false);
   const securityCardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [mounted]);
 
   useEffect(() => {
     if (securityCardRef.current) {
       setCardHeight(securityCardRef.current.offsetHeight);
     }
   }, []);
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <div className="min-h-screen bg-black">
@@ -47,7 +58,7 @@ export default function LandingPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="container mx-auto px-6 pt-96 lg:pt-0 h-dvh flex items-center justify-center">
+      <section className="container mx-auto px-6 pt-[28rem] lg:pt-0 h-dvh flex items-center justify-center">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <div className="space-y-4">

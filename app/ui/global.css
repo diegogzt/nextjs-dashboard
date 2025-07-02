@@ -2,14 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-html{
+html {
   background-color: rgba(0, 0, 0, 0.95);
-  overscroll-behavior: none;
   -webkit-backdrop-filter: blur(30px);
   backdrop-filter: blur(30px);
-  -webkit-overflow-scrolling: auto;
-  touch-action: none;
-  user-select: none;
+}
+
+/* Mejorar scroll en móviles */
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Solucionar problemas de scroll en iOS y móviles */
+* {
+  touch-action: manipulation;
+}
+
+/* Mejorar el rendimiento del scroll */
+html,
+body {
+  height: 100%;
+  overscroll-behavior: none;
+}
+
+/* Prevenir zoom en iOS */
+input,
+textarea,
+select {
+  font-size: 16px;
 }
 
 input[type="number"] {
@@ -25,4 +46,30 @@ input[type="number"]::-webkit-inner-spin-button {
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+/* Estilos específicos para móviles */
+@media (max-width: 768px) {
+  body {
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+  }
+
+  /* Prevenir problemas de scroll bounce en iOS */
+  html {
+    overflow: auto;
+  }
+
+  /* Asegurar que el contenido sea scrolleable */
+  .min-h-screen {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
+}
+
+/* Mejorar compatibilidad con iOS */
+@supports (-webkit-touch-callout: none) {
+  body {
+    min-height: -webkit-fill-available;
+  }
 }
